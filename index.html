@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kreos Companies</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script type="text/javascript" src="KreosCompanies.js"></script>
+</head>
+<body>
+
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-lg-10">
+			<div class="jumbotron">
+				<h1>Kreos Portfolio Companies</h1>
+			</div>
+			<table class="table table-responsive-xl table-hover table-bordered" id="myTable">
+				<thead>	
+					<tr>
+						<th onclick="sortTable(0)">Company</th>
+						<th>Description</th>
+						<th onclick="sortTable(1)">Country</th>
+						<th onclick="sortTable(2)">Category</th>
+						<th onclick="sortTable(3)">Exited</th>
+						<th>Website</th>
+					</tr>
+				</thead>
+				<tbody>
+					<script>
+						INVESTMENTS.forEach(function(investment){
+							document.write('<tr><td>' + investment.post_title + '</td>');
+							document.write('<td class="description">' + stripHTML(investment.post_content)+ '</td>');
+							document.write('<td>');
+							investment.categories.forEach(function(country){
+								if(geography[country]){
+									document.write(geography[country] + " ");
+								}
+							})
+							document.write('</td>')
+							document.write('<td>');
+							investment.categories.forEach(function(category){
+								if(industry[category]){
+									document.write(industry[category]);
+								}
+							})
+							document.write('</td>')
+							document.write('<td>' + investment.exited + '</td>');
+							document.write('<td><a href=' + investment.url + '>' + investment.url + '</td></tr>');
+						})
+					</script>
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
