@@ -1,0 +1,19 @@
+body{
+	background-color: #EDD6D1;
+}
+
+table{
+	background-color: white;
+}
+
+.jumbotron {
+	margin-top: 50px;
+	width: 100%;
+	text-align: center;
+	opacity: 70%;
+}
+
+.description {
+	width: 30%;
+}
+
