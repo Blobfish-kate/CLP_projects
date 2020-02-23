@@ -10,27 +10,27 @@
 
 	<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-lg-10">
+<!-- 		<div class="col-md-1"></div>
+		<div class="col-lg-10"> -->
 			<div class="jumbotron">
 				<h1>Kreos Portfolio Companies</h1>
 			</div>
-			<table class="table table-responsive-xl table-hover table-bordered" id="myTable">
+			<table class="table table-striped table-hover table-bordered" id="myTable">
 				<thead>	
 					<tr>
-						<th onclick="sortTable(0)">Company</th>
-						<th>Description</th>
-						<th onclick="sortTable(1)">Country</th>
-						<th onclick="sortTable(2)">Category</th>
-						<th onclick="sortTable(3)">Exited</th>
+						<th>Company</th>
+						<th class="col-6">Description</th>
+						<th>Country</th>
+						<th>Category</th>
+						<th>Exited</th>
 						<th>Website </th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tbody">
 					<script>
 						INVESTMENTS.forEach(function(investment){
 							document.write('<tr><td>' + investment.post_title + '</td>');
-							document.write('<td class="description">' + stripHTML(investment.post_content)+ '</td>');
+							document.write('<td>' + stripHTML(investment.post_content)+ '</td>');
 							document.write('<td>');
 							investment.categories.forEach(function(country){
 								if(geography[country]){
@@ -51,8 +51,8 @@
 					</script>
 				</tbody>
 			</table>
-		</div>
-		</div>
+<!-- 		</div>
+		</div> -->
 	</div>
 	</div>
 	<script type="text/javascript" src="script.js"></script>
