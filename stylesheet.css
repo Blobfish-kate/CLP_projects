@@ -4,16 +4,25 @@ body{
 
 table{
 	background-color: white;
+	width: auto;
 }
 
 .jumbotron {
-	margin-top: 50px;
 	width: 100%;
 	text-align: center;
 	opacity: 70%;
 }
 
-.description {
-	width: 30%;
+
+tr {
+	padding: 5px;
+}
+
+th {
+	cursor: pointer;
+}
+
+.container-fluid {
+	margin: 20px;
 }
 
